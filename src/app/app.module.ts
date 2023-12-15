@@ -3,10 +3,26 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { CompetitionComponent } from './components/competition/competition.component';
+import { CreateCompetitionComponent } from './components/create-competition/create-competition.component';
+import { RegisterMemberComponent } from './components/register-member/register-member.component';
+import { InsertResultsComponent } from './components/insert-results/insert-results.component';
+import { PodiumComponent } from './components/podium/podium.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { NavbarComponent } from './components/navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CompetitionComponent,
+    CreateCompetitionComponent,
+    RegisterMemberComponent,
+    InsertResultsComponent,
+    PodiumComponent,
+    SidebarComponent,
+    DashboardComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,

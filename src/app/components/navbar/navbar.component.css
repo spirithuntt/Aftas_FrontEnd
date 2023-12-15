@@ -1,0 +1,61 @@
+/* Custom styling for the search bar */
+
+.navbar-search {
+  position: relative;
+}
+
+.navbar-search .input-group {
+  transition: width 0.4s; /* Smooth transition for the input width */
+  width: 250px; /* Initial width of the input */
+}
+
+.navbar-search .form-control {
+  border: 2px solid #e3e6f0; /* Border color for the search input */
+  border-radius: 20px; /* Rounded corners for the search input */
+}
+
+.navbar-search .form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #007bff; /* Border color for the search input on focus */
+}
+
+.navbar-search button {
+  background-color: #007bff; /* Background color for the search button */
+  border: 2px solid #007bff; /* Border color for the search button */
+  border-radius: 20px; /* Rounded corners for the search button */
+}
+
+.navbar-search button i {
+  color: #fff; /* Color of the search icon in the button */
+}
+
+/* Expand the input width on focus */
+.navbar-search .form-control:focus + .input-group-append .btn {
+  border-radius: 20px 20px 20px 20px;
+}
+
+/* Adjust the transition for the input width */
+.navbar-search .form-control:focus + .input-group-append .btn {
+  transition: width 0.4s;
+}
+
+/* Adjust the width of the input on focus */
+.navbar-search .form-control:focus + .input-group-append .btn {
+  width: 60px;
+}
+
+/* Align the search button with the input */
+.navbar-search .input-group-append {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Adjust spacing and padding for a cleaner look */
+.navbar-search .input-group-append .btn {
+  padding: 10px;
+  margin-left: -1px;
+  border: none;
+}
