@@ -14,37 +14,6 @@ import { RegisterMemberService } from 'src/app/services/members/register-member.
   standalone: true,
   imports: [ReactiveFormsModule]
 })
-export class RegisterMemberComponent implements OnInit {
-  registrationForm!: FormGroup; 
-  constructor(private formBuilder: FormBuilder, private registerMemberService: RegisterMemberService) { }
+export class RegisterMemberComponent {
 
-  ngOnInit() {
-    this.registrationForm = this.formBuilder.group({
-      member: ['', Validators.required],
-      competition: ['', Validators.required],
-    });
-  }
-
-  onSubmit() {
-    if (this.registrationForm.valid) {
-      const registerMemberData: RegisterMember = {
-        member: this.registrationForm.value.member,
-        competition: this.registrationForm.value.competition,
-      };
-
-      const registerMemberModel = new RegisterMemberC(
-        registerMemberData.member,
-        registerMemberData.competition
-      );
-
-      this.registerMemberService.registerMember(registerMemberModel).subscribe(
-        (response: Response) => {
-          console.log('Member successfully registered for the competition', response);
-        },
-        (error: any) => {
-          console.error('Error registering member for the competition', error);
-        }
-      );
-    }
-  }
 }
