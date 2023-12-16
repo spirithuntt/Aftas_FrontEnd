@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./sidebar.component.css']
 })
 export class SidebarComponent {
+route(arg0: string) {
+throw new Error('Method not implemented.');
+}
 
 }

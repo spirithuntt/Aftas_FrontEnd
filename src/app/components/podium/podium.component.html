@@ -1,29 +1,39 @@
 <!-- main.component.html -->
-<main class="container">
+<main class="container mx-auto mt-8 p-4">
   <!-- title -->
-  <div class="title text-center mt-4">
-    <h1>Podium</h1>
+  <div class="title text-center mb-8">
+    <h1 class="text-4xl font-bold text-blue-600">Podium</h1>
   </div>
-  <div id="leaderboard" class="position-relative">
-    <div class="ribbon"></div>
-    <table class="table table-hover">
-      <tr>
-        <td class="number">1</td>
-        <td class="name">Lee Taeyong</td>
-        <td class="points">
-          258.244 points
-        </td>
-      </tr>
-      <tr>
-        <td class="number">2</td>
-        <td class="name">Mark Lee</td>
-        <td class="points">258.242 points</td>
-      </tr>
-      <tr>
-        <td class="number">3</td>
-        <td class="name">Xiao Dejun</td>
-        <td class="points">258.223 points</td>
-      </tr>
+  <div id="leaderboard" class="relative">
+    <!-- Ribbon -->
+    <div class="ribbon absolute top-0 left-0 w-full h-4 bg-blue-600"></div>
+
+    <!-- Table -->
+    <table class="table-auto w-full border-collapse border border-blue-600 bg-white shadow-md rounded-md overflow-hidden">
+      <thead class="bg-blue-600 text-white">
+        <tr>
+          <th class="py-2">#</th>
+          <th class="py-2">Name</th>
+          <th class="py-2">Points</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="hover:bg-blue-100">
+          <td class="border py-2">1</td>
+          <td class="border py-2">Lee Taeyong</td>
+          <td class="border py-2">258.244 points</td>
+        </tr>
+        <tr class="hover:bg-blue-100">
+          <td class="border py-2">2</td>
+          <td class="border py-2">Mark Lee</td>
+          <td class="border py-2">258.242 points</td>
+        </tr>
+        <tr class="hover:bg-blue-100">
+          <td class="border py-2">3</td>
+          <td class="border py-2">Xiao Dejun</td>
+          <td class="border py-2">258.223 points</td>
+        </tr>
+      </tbody>
     </table>
   </div>
 </main>

@@ -1,42 +1,61 @@
-<div class="container mt-4">
-  <button class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#addCompetitionModal">Add Competition</button>
 
-  <table class="table">
-    <thead>
-      <tr>
-        <th scope="col">Competition Name</th>
-        <th scope="col">Actions</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td>Competition 1</td>
-        <td>
-          <button class="btn btn-success btn-sm me-2">Update</button>
-          <button class="btn btn-danger btn-sm">Delete</button>
-        </td>
-      </tr>
-      <!-- Add more rows as needed -->
-    </tbody>
-  </table>
+<div
+class="rounded-lg border-gray-300 dark:border-gray-600 h-96 mb-10"
+>
+<div class="relative overflow-x-auto">
+  <a routerLink="/Create-competition"
+  class="border-gray-600 dark:border-gray-400 absolute top-0 right-0 bg-blue-300 dark:bg-gray-800 dark:text-gray-400 rounded-lg px-3 py-1.5 text-xs"
+>
+  Add Competition
+</a>
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+            <tr>
+                <th scope="col" class="px-6 py-3">
+                    Location
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Date
+                </th>
+                <th scope="col" class="px-6 py-3">
+                  Start Time
+                </th>
+              <th scope="col" class="px-6 py-3">
+                End Time
+            </th>
+                <th scope="col" class="px-6 py-3">
+                    Number of Participants
+                </th>
+                <th scope="col" class="px-6 py-3">
+                    Status
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let competition of competitions">
+                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                  {{ competition.location }}
+                </th>
+                <td class="px-6 py-4">
+                  {{ competition.date | date:'yyyy-MM-dd' }}
+                </td>
+                <td class="px-6 py-4">
+                  {{ competition.startTime }}
+                </td>
+                <td class="px-6 py-4">
+                  {{ competition.endTime }}
+                </td>
+                <td class="px-6 py-4">
+                  {{ competition.numberOfParticipants }}
+                </td>
+                <td> <span [ngClass]="{'label':true,'bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-green-900 dark:text-green-300': compareDateWithCurrentDate(competition.date) == 2,'bg-red-100 text-red-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-red-900 dark:text-red-300': compareDateWithCurrentDate(competition.date) == 3,'bg-blue-100 text-blue-800 text-sm font-medium me-2 px-2.5 py-0.5 rounded dark:bg-blue-900 dark:text-blue-300': compareDateWithCurrentDate(competition.date) == 1 } ">
+                  {{(compareDateWithCurrentDate(competition.date) == 3)?'Finished!':(compareDateWithCurrentDate(competition.date) == 1)?'Ongoing':'Upcoming...'}}
+                </span>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
 
-<div class="modal fade" id="addCompetitionModal" tabindex="-1" aria-labelledby="addCompetitionModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="addCompetitionModalLabel">Add Competition</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <form>
-          <div class="mb-3">
-            <label for="competitionName" class="form-label">Competition Name</label>
-            <input type="text" class="form-control" id="competitionName" required>
-          </div>
-          <button type="submit" class="btn btn-primary">Add</button>
-        </form>
-      </div>
-    </div>
-  </div>
 </div>
+

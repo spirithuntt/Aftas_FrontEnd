@@ -1,1 +1,30 @@
-<p>create-competition works!</p>
+<div class="mb-5 title text-center mt-4">
+  <h2 class="text-2xl font-medium text-blue-500 dark:text-white mt-5">Create Competition</h2>
+</div>
+<form class="max-w-sm mx-auto" [formGroup]="competitionForm" (ngSubmit)="onSubmit()">
+  <div class="mb-5">
+    <label for="date" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Date</label>
+    <input type="input" id="date" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Date" required formControlName="date">
+  </div>
+  <div class="mb-5">
+    <label for="startTime" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">startTime</label>
+    <input type="input" id="startTime" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Start Time" required formControlName="startTime">
+  </div>
+  <div class="mb-5">
+    <label for="endTime" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">End Time</label>
+    <input type="input" id="endTime" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter End Time" required formControlName="endTime">
+  </div>
+  <div class="mb-5">
+    <label for="numberOfParticipants" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Number Of Participants</label>
+    <input type="input" id="numberOfParticipants" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Number Of Participants" required formControlName="numberOfParticipants">
+  </div>
+  <div class="mb-5">
+    <label for="location" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Location</label>
+    <input type="location" id="location" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Location" required formControlName="location">
+  </div>
+  <div class="mb-5">
+    <label for="amount" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Amount</label>
+    <input type="number" id="amount" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Enter Amount" required formControlName="amount">
+  </div>
+  <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" [disabled]="competitionForm.invalid">Submit</button>
+</form>
