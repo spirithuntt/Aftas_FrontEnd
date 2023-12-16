@@ -4,16 +4,17 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterMemberComponent } from './components/register-member/register-member.component';
 import { InsertResultsComponent } from './components/insert-results/insert-results.component';
+import { CommonModule } from '@angular/common';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CompetitionComponent } from './components/competitions/competition.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CompetitionService } from './services/competitions/competition.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    RegisterMemberComponent,
     InsertResultsComponent,
     SidebarComponent,
     NavbarComponent
@@ -23,8 +24,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    ReactiveFormsModule,
+    CommonModule
   ],
-  providers: [],
+  providers: [CompetitionService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

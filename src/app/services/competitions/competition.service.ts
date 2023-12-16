@@ -6,7 +6,7 @@ import { environment } from 'src/app/environments/environment';
 import { Competition } from 'src/app/models/competition';
 
 const httpOptions = {
-  headers: new HttpHeaders({'Content-type' : 'application/json'})
+  headers: new HttpHeaders({'Content-Type' : 'application/json'})
 };
 
 @Injectable({
@@ -15,6 +15,7 @@ const httpOptions = {
 
 export class CompetitionService {
   private apiUrl = environment.api + '/competitions';
+  registerMember: any;
 
   constructor(private http: HttpClient) { }
 
@@ -24,9 +25,8 @@ export class CompetitionService {
     )
   }
 
-  CreateCompetitionComponent(competitionData: any): Observable<any> {
+  CreateCompetitionComponent(competitionData: Competition): Observable<Competition> {
     return this.http.post(this.apiUrl, competitionData, httpOptions);
   }
-
 
 }
