@@ -4,7 +4,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterMemberComponent } from './components/register-member/register-member.component';
 import { InsertResultsComponent } from './components/insert-results/insert-results.component';
-import { PodiumComponent } from './components/podium/podium.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { CompetitionComponent } from './components/competitions/competition.component';
@@ -16,7 +15,6 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppComponent,
     RegisterMemberComponent,
     InsertResultsComponent,
-    PodiumComponent,
     SidebarComponent,
     NavbarComponent
   ],
