@@ -1,4 +1,3 @@
-<!-- main.component.html -->
 <main class="container mx-auto mt-8 p-4">
   <!-- title -->
   <div class="title text-center mb-8">
@@ -9,7 +8,7 @@
     <div class="ribbon absolute top-0 left-0 w-full h-4 bg-blue-600"></div>
 
     <!-- Table -->
-    <table class="table-auto w-full border-collapse border border-blue-600 bg-white shadow-md rounded-md overflow-hidden" *ngFor="let result of podiumResults">
+    <table class="table-auto w-full border-collapse border border-blue-600 bg-white shadow-md rounded-md overflow-hidden">
       <thead class="bg-blue-600 text-white">
         <tr>
           <th class="py-2">#</th>
@@ -18,20 +17,20 @@
         </tr>
       </thead>
       <tbody>
-        <tr class="hover:bg-blue-100">
-          <td class="border py-2">1</td>
-          <td class="border py-2">{{result.name }}</td>
-          <td class="border py-2">258.244 points</td>
+        <tr>
+          <td class="border py-2">{{ podiumData[0]?.rank }}</td>
+          <td class="border py-2">{{ podiumData[0]?.member }}</td>
+          <td class="border py-2">{{ podiumData[0]?.score }} points</td>
         </tr>
-        <tr class="hover:bg-blue-100">
-          <td class="border py-2">2</td>
-          <td class="border py-2">{{result.name }}</td>
-          <td class="border py-2">258.242 points</td>
+        <tr>
+          <td class="border py-2">{{ podiumData[1]?.rank }}</td>
+          <td class="border py-2">{{ podiumData[1]?.member }}</td>
+          <td class="border py-2">{{ podiumData[1]?.score }} points</td>
         </tr>
-        <tr class="hover:bg-blue-100">
-          <td class="border py-2">3</td>
-          <td class="border py-2">{{result.name }}</td>
-          <td class="border py-2">258.223 points</td>
+        <tr>
+          <td class="border py-2">{{ podiumData[2]?.rank }}</td>
+          <td class="border py-2">{{ podiumData[2]?.member }}</td>
+          <td class="border py-2">{{ podiumData[2]?.score }} points</td>
         </tr>
       </tbody>
     </table>

@@ -12,7 +12,7 @@ const routes: Routes = [
     title : 'Competitions Page'
   },
   {
-    path : 'Podium',
+    path: 'Podium/:competitionId',
     component : PodiumComponent ,
     title : 'Podium Page'
   },

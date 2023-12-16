@@ -1,4 +1,3 @@
-import { CreateCompetitionService } from './../../services/competitions/create-competition.service';
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
 import { CompetitionService } from 'src/app/services/competitions/competition.service';

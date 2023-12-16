@@ -33,9 +33,9 @@ class="rounded-lg border-gray-300 dark:border-gray-600 h-96 mb-10"
         </thead>
         <tbody>
             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700" *ngFor="let competition of competitions">
-                <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                <button scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"  (click)="openPodium(competition.id)">
                   {{ competition.location }}
-                </th>
+                </button>
                 <td class="px-6 py-4">
                   {{ competition.date | date:'yyyy-MM-dd' }}
                 </td>

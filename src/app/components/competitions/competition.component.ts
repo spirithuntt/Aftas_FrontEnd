@@ -1,14 +1,14 @@
 import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { Competition } from 'src/app/models/competition';
 import { CompetitionService } from 'src/app/services/competitions/competition.service';
-import { RouterLink } from '@angular/router';
 
 
 @Component({
   selector: 'app-competition',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule],
   templateUrl: './competition.component.html',
   styleUrls: ['./competition.component.css']
 })
@@ -16,8 +16,10 @@ export class CompetitionComponent {
 
   competitions: Competition[] = [];
 filteredCompetitions: any;
-
-  constructor(private competitionService: CompetitionService) { }
+  constructor(
+    private router: Router,
+    private competitionService: CompetitionService
+    ) { }
 
   ngOnInit(): void {
     this.competitionService.getCompetitions().subscribe((data: Competition[]) => {
@@ -39,6 +41,12 @@ filteredCompetitions: any;
     }
     return 0;
   }
+  openPodium(competitionId: string | undefined): void{
+    if (competitionId) {
+      console.log('Competition Id:', competitionId);
+      this.router.navigate(['/Podium', competitionId]);
+    }
+}
 
 
 }

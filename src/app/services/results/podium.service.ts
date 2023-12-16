@@ -11,13 +11,11 @@ const httpOptions = {
   providedIn: 'root'
 })
 export class PodiumService {
-  private apiUrl = 'http://localhost:8080/api/podium/1';
+  private apiUrl = environment.api + '/rankings/podium';
 
   constructor(private http:HttpClient) { }
 
-  getPodium(): Observable<Ranking[]>{
-    return this.http.get<Ranking[]>(this.apiUrl).pipe(
-        map((res: any) => res.data)
-    )
+  getPodiumData(competitionId: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${competitionId}`, httpOptions)
   }
 }

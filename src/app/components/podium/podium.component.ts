@@ -1,24 +1,49 @@
+// components/podium/podium.component.ts
+
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { PodiumService } from './../../services/results/podium.service';
-import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
 import { Ranking } from 'src/app/models/ranking';
+import { NgModule } from '@angular/core';
+import { CommonModule } from '@angular/common';
 
 @Component({
   standalone: true,
   selector: 'app-podium',
   templateUrl: './podium.component.html',
   styleUrls: ['./podium.component.css'],
-  imports: [CommonModule],
 })
-export class PodiumComponent {
-  podiumResults: Ranking[] = [];
+export class PodiumComponent implements OnInit {
+  competitionId: string | null = null;
+  podiumData: any[] = [];
 
-  constructor(private PodiumService: PodiumService) {}
-
+  constructor(
+    private route: ActivatedRoute,
+    private podiumService: PodiumService
+  ) {}
   ngOnInit(): void {
-    this.PodiumService.getPodium().subscribe((data: Ranking[]) => {
-      this.podiumResults = data;
+    this.route.paramMap.subscribe(params => {
+      this.competitionId = params.get('competitionId');
+      if (this.competitionId) {
+        this.podiumService.getPodiumData(this.competitionId).subscribe(response => {
+
+          if (Array.isArray(response.data)) {
+            this.podiumData = response.data.map((ranking: any) => {
+              return {
+                rank: ranking.rank,
+                member: ranking.member?.name,
+                score: ranking.score,
+              };
+            });
+            console.log('Podium data:', this.podiumData);
+          } else {
+            console.error('Invalid response format. Expected an array.');
+          }
+        });
+      }
     });
   }
-  
+
+
+
 }
