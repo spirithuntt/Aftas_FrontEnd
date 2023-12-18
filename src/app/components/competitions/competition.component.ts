@@ -47,6 +47,12 @@ filteredCompetitions: any;
       this.router.navigate(['/Podium', competitionId]);
     }
 }
+openInsertResult(competitionId: string | undefined): void{
+  if (competitionId) {
+    console.log('Competition Id:', competitionId);
+    this.router.navigate(['/InsertResults'], { queryParams: { competitionId: competitionId } });
+  }
 
 
+}
 }

@@ -37,15 +37,12 @@ export class RegisterMemberComponent implements OnInit {
         registerMemberData.competition
       );
 
-      // Call the API to register the member in the competition
       this.registerMemberService.registerMember(registerMemberModel).subscribe(
         (response: Response) => {
           console.log('Member successfully registered for the competition', response);
-          // Handle success here, e.g., show a success message to the user
         },
         (error: any) => {
           console.error('Error registering member for the competition', error);
-          // Handle error, e.g., display an error message to the user
         }
       );
     }

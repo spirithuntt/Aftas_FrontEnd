@@ -4,6 +4,7 @@ import { CompetitionComponent } from './components/competitions/competition.comp
 import { PodiumComponent } from './components/podium/podium.component';
 import { CreateCompetitionComponent } from './components/create-competition/create-competition.component';
 import { RegisterMemberComponent } from './components/register-member/register-member.component';
+import { InsertResultsComponent } from './components/insert-results/insert-results.component';
 
 const routes: Routes = [
   {
@@ -30,6 +31,11 @@ const routes: Routes = [
     path: 'Podium',
     component: PodiumComponent,
     title: 'Podium Page'
+  },
+  {
+    path: 'InsertResults',
+    component: InsertResultsComponent,
+    title: 'Insert Hunting Results Page'
   }
 
 
