@@ -11,11 +11,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CompetitionService } from './services/competitions/competition.service';
 import { Router, RouterModule } from '@angular/router';
+import { HuntinComponent } from './hunting/huntin/huntin.component';
+import { HuntingComponent } from './hunting/hunting/hunting.component';
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    HuntinComponent,
+    HuntingComponent
   ],
   imports: [
     RouterModule,
