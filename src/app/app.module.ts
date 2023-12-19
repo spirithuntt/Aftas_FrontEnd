@@ -13,13 +13,15 @@ import { CompetitionService } from './services/competitions/competition.service'
 import { Router, RouterModule } from '@angular/router';
 import { HuntinComponent } from './hunting/huntin/huntin.component';
 import { HuntingComponent } from './hunting/hunting/hunting.component';
+import { ParticipantComponent } from './participant/participant/participant.component';
 @NgModule({
   declarations: [
     AppComponent,
     SidebarComponent,
     NavbarComponent,
     HuntinComponent,
-    HuntingComponent
+    HuntingComponent,
+    ParticipantComponent
   ],
   imports: [
     RouterModule,

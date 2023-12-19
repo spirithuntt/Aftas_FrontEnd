@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, ReactiveFormsModule} from '@angular/forms';
-import { CompetitionService } from 'src/app/services/competitions/competition.service';
+import { CompetitionService } from 'src/app/services/competition/competition.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
