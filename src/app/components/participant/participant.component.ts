@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./participant.component.css']
 })
 export class ParticipantComponent {
+insertHunting(arg0: any) {
+throw new Error('Method not implemented.');
+}
 
 }
