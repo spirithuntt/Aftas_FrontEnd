@@ -13,6 +13,8 @@ import { RoleComponent } from './components/role/role.component';
 import { authGuard } from './guard/auth/auth.guard';
 import { RoleResolver } from './resolver/role/role.resolver';
 import { adminGuard } from './guard/admin/admin.guard';
+import { BoardMemberComponent } from './components/board-member/board-member.component';
+import { BoardManagerComponent } from './components/board-manager/board-manager.component';
 
 export const routes: Routes = [
     { path: '', component: CompetitionComponent },
@@ -25,7 +27,10 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
-    { path: 'roles', component: RoleComponent, resolve: { roles: RoleResolver }, canActivate: [authGuard , adminGuard],}
+    { path: 'roles', component: RoleComponent, resolve: { roles: RoleResolver }, canActivate: [authGuard , adminGuard], },
+    { path: 'board-member', component: BoardMemberComponent, canActivate: [authGuard, adminGuard] },
+    { path: 'board-manager', component: BoardManagerComponent, canActivate: [authGuard, adminGuard] },
+
 
 
 ];

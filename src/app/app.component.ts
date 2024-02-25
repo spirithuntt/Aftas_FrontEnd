@@ -6,13 +6,12 @@ import { HttpClient } from '@angular/common/http';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { CompetitionComponent } from './components/competition/competition.component';
 import { NotificationsComponent } from './components/notifications/notifications.component';
-import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, SidebarComponent, CompetitionComponent, NotificationsComponent, BrowserModule, FormsModule, ReactiveFormsModule],
+  imports: [CommonModule, RouterOutlet, RouterLink, RouterLinkActive, SidebarComponent, CompetitionComponent, NotificationsComponent, FormsModule, ReactiveFormsModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

@@ -25,12 +25,12 @@ export class RegisterComponent {
 
   onSubmit(): void {
     const { name, email, password } = this.form;
-
     this.authService.register(name,  email, password).subscribe(
       data => {
         console.log(data);
         this.isSuccessful = true;
         this.isSignUpFailed = false;
+        console.log("User registered successfully, You will need to wait for the admin to approve your account")
       },
       err => {
         this.errorMessage = err.error.message;

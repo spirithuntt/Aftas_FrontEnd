@@ -4,17 +4,17 @@
         <!-- <a href="index.html"><img src="../../assets/images/logo/logo-no-background.png" width="25" alt="RentalHive"></a> -->
     </div>
     <div class="menu">
-        <ul class="list">
-            <li>
-                <div class="user-info">
-                    <a class="image" href="profile.html"><img src="" alt="User"></a>
-                    <div class="detail">
-                        <h4>Michael</h4>
-                        <small>Super Admin</small>                        
-                    </div>
-                </div>
-            </li>
-            <li><a href="index.html"><i class="zmdi zmdi-home"></i><span>Competitions</span></a></li>
-        </ul>
+<!-- leftsidebar.component.html -->
+<ul class="list">
+  <!-- Common link -->
+  <li><a *ngIf="isJury"><i class="zmdi zmdi-home"></i><span>Board Jury</span></a></li>
+
+  <!-- Member link -->
+  <li *ngIf="isMember"><a [routerLink]="['/board-member']"><i class="zmdi zmdi-account"></i><span>Board Member</span></a></li>
+
+  <!-- Admin link -->
+  <li *ngIf="isManager"><a [routerLink]="['/board-manager']"><i class="zmdi zmdi-settings"></i><span>Board Manager</span></a></li>
+</ul>
+
     </div>
 </aside>
