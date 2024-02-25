@@ -6,6 +6,13 @@ import { ParticipantComponent } from './components/participant/participant.compo
 import { HuntingComponent } from './components/hunting/hunting.component';
 import { PodiumComponent } from './components/podium/podium.component';
 import { AddMemberComponent } from './components/add-member/add-member.component';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
+import { ProfileComponent } from './components/profile/profile.component';
+import { RoleComponent } from './components/role/role.component';
+import { authGuard } from './guard/auth/auth.guard';
+import { RoleResolver } from './resolver/role/role.resolver';
+import { adminGuard } from './guard/admin/admin.guard';
 
 export const routes: Routes = [
     { path: '', component: CompetitionComponent },
@@ -15,4 +22,10 @@ export const routes: Routes = [
     { path: 'participants/:competitionCode/hunting/:member', component: HuntingComponent },
     { path: 'podium/:competitionCode', component: PodiumComponent },
     { path: 'add-member/:competitionCode', component: AddMemberComponent },
+    { path: 'login', component: LoginComponent },
+    { path: 'register', component: RegisterComponent },
+    { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
+    { path: 'roles', component: RoleComponent, resolve: { roles: RoleResolver }, canActivate: [authGuard , adminGuard],}
+
+
 ];
