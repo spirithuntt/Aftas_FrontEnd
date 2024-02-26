@@ -7,7 +7,7 @@
 <!-- leftsidebar.component.html -->
 <ul class="list">
   <!-- Common link -->
-  <li><a *ngIf="isJury"><i class="zmdi zmdi-home"></i><span>Board Jury</span></a></li>
+  <li *ngIf="isJury"><a [routerLink]="['']"><i class="zmdi zmdi-home"></i><span>Jury board</span></a></li>
 
   <!-- Member link -->
   <li *ngIf="isMember"><a [routerLink]="['/board-member']"><i class="zmdi zmdi-account"></i><span>Board Member</span></a></li>

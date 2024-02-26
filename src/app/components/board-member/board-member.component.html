@@ -1,1 +1,38 @@
-<p>board-member works!</p>
+<div class="container mx-auto mt-12 p-8 bg-light text-dark shadow-md rounded-md" style="max-width: 800px;">
+
+  <h2 class="text-2xl font-weight-bold mb-4">Home</h2>
+
+  <!-- Get Roles Section -->
+  <div class="mb-8">
+    <div class="bg-white p-4 rounded-md">
+      <h3 class="text-lg font-weight-bold mb-2">My Competition</h3>
+      <div class="table-responsive">
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>code</th>
+              <th>location</th>
+              <th>numberOfParticipants</th>
+              <th>date</th>
+              <th>endTime</th>
+              <th>Price</th>
+
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let competition of competitions">
+              <td>{{ competition.code }}</td>
+              <td>{{ competition.location }} ²</td>
+              <td>{{ competition.numberOfParticipants }}</td>
+              <td>{{ competition.date }}</td>
+              <td>{{ competition.endTime }}</td>
+              <td>{{ competition.amount }} DH</td>
+
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
