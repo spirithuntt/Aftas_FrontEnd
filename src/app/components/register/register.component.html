@@ -1,43 +1,43 @@
-<div class="container mx-auto mt-12 p-8 bg-gray-800 text-gray-300 shadow-md rounded-md" style="max-width: 400px;">
+<div class="container mx-auto mt-5 p-4 bg-light text-dark shadow rounded" style="max-width: 400px;">
   <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
-    class="w-24 h-24 rounded-full border-4 border-blue-500 mx-auto mb-6" />
+      class="w-24 h-24 rounded-full border-4 border-primary mx-auto mb-4" />
 
   <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
-    <div class="mb-4">
-      <label for="name" class="block text-sm font-semibold">Name</label>
-      <input type="text" class="form-input w-full text-black" name="name" [(ngModel)]="form.name" required minlength="3"
-        maxlength="20" #name="ngModel" [ngClass]="{ 'border-red-500': f.submitted && name.errors }" />
-      <div *ngIf="name.errors && f.submitted" class="text-red-500 text-xs mt-1">
-        <div *ngIf="name.errors['required']">Name is required</div>
-        <div *ngIf="name.errors['minlength']">Name must be at least 3 characters</div>
-        <div *ngIf="name.errors['maxlength']">Name must be at most 20 characters</div>
+      <div class="mb-3">
+          <label for="name" class="form-label text-sm font-semibold">Name</label>
+          <input type="text" class="form-control" name="name" [(ngModel)]="form.name" required minlength="3"
+              maxlength="20" #name="ngModel" [ngClass]="{ 'border-danger': f.submitted && name.errors }" />
+          <div *ngIf="name.errors && f.submitted" class="text-danger text-sm mt-1">
+              <div *ngIf="name.errors['required']">Name is required</div>
+              <div *ngIf="name.errors['minlength']">Name must be at least 3 characters</div>
+              <div *ngIf="name.errors['maxlength']">Name must be at most 20 characters</div>
+          </div>
       </div>
-    </div>
-    <div class="mb-4">
-      <label for="email" class="block text-sm font-semibold">Email</label>
-      <input type="text" class="form-input w-full text-black" name="email" [(ngModel)]="form.email" required #email="ngModel"
-        [ngClass]="{ 'border-red-500': f.submitted && email.errors }" />
-      <div *ngIf="email.errors && f.submitted" class="text-red-500 text-xs mt-1">Email is required!</div>
-    </div>
-    <div class="mb-4">
-      <label for="password" class="block text-sm font-semibold">Password</label>
-      <input type="password" class="form-input w-full text-black" name="password" [(ngModel)]="form.password" required
-        minlength="6" #password="ngModel" [ngClass]="{ 'border-red-500': f.submitted && password.errors }" />
-      <div *ngIf="password.errors && f.submitted" class="text-red-500 text-xs mt-1">
-        <div *ngIf="password.errors['required']">Password is required</div>
-        <div *ngIf="password.errors['minlength']">Password must be at least 6 characters</div>
+      <div class="mb-3">
+          <label for="email" class="form-label text-sm font-semibold">Email</label>
+          <input type="text" class="form-control" name="email" [(ngModel)]="form.email" required #email="ngModel"
+              [ngClass]="{ 'border-danger': f.submitted && email.errors }" />
+          <div *ngIf="email.errors && f.submitted" class="text-danger text-sm mt-1">Email is required!</div>
       </div>
-    </div>
-    <div>
-      <button class="bg-blue-500 text-white py-2 px-4 rounded-full">Sign Up</button>
-    </div>
+      <div class="mb-3">
+          <label for="password" class="form-label text-sm font-semibold">Password</label>
+          <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required
+              minlength="6" #password="ngModel" [ngClass]="{ 'border-danger': f.submitted && password.errors }" />
+          <div *ngIf="password.errors && f.submitted" class="text-danger text-sm mt-1">
+              <div *ngIf="password.errors['required']">Password is required</div>
+              <div *ngIf="password.errors['minlength']">Password must be at least 6 characters</div>
+          </div>
+      </div>
+      <div>
+          <button class="btn btn-primary">Sign Up</button>
+      </div>
 
-    <div *ngIf="f.submitted && isSignUpFailed" class="text-red-500 text-sm mt-2">
-      Signup failed!<br />{{ errorMessage }}
-    </div>
+      <div *ngIf="f.submitted && isSignUpFailed" class="text-danger text-sm mt-2">
+          Signup failed!<br />{{ errorMessage }}
+      </div>
   </form>
 
-  <div class="text-green-500 text-sm mt-4" *ngIf="isSuccessful">
-    Your registration is successful, but you need To wait for admin approval.
+  <div class="text-success text-sm mt-3" *ngIf="isSuccessful">
+      Your registration is successful, but you need to wait for admin approval.
   </div>
 </div>

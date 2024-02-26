@@ -6,6 +6,9 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class MemberService {
+  getUsers() {
+    throw new Error('Method not implemented.');
+  }
 
   private apiUrl = 'http://localhost:8080/api/v1';
 
@@ -13,7 +16,6 @@ export class MemberService {
 
   unlockAccount(userId: number): Observable<void> {
     const url = `${this.apiUrl}/role/unlock/${userId}`;
-    console.log('Unlocking account:', url);
     return this.http.put<void>(url, {});
   }
 
@@ -21,5 +23,6 @@ export class MemberService {
   getAllMembers(): Observable<any> {
     return this.http.get(`${this.apiUrl}/members`);
   }
+
 
 }

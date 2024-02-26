@@ -8,33 +8,24 @@
       <h3 class="text-lg font-weight-bold mb-2">Get Roles</h3>
       <div class="table-responsive">
         <table class="table table-bordered">
-          <!-- Table header -->
           <thead>
             <tr>
-              <th class="py-2 px-4 border-bottom text-muted">Role ID</th>
-              <th class="py-2 px-4 border-bottom text-muted">Role Name</th>
-              <!-- Add more columns as needed -->
-              <!-- your-dashboard.component.html -->
-<!-- your.component.html -->
-
-
-
+              <th>name</th>
+              <th>number</th>
+              <th>Actions</th>
             </tr>
           </thead>
-          <!-- Table body -->
           <tbody>
-            <!-- Loop through roles and display rows -->
-            <!-- <tr *ngFor="let role of roles">
-                          <td class="py-2 px-4 border-bottom">{{ role.id }}</td>
-                          <td class="py-2 px-4 border-bottom">{{ role.name }}</td>
-                      </tr> -->
+            <tr *ngFor="let user of members">
+              <td>{{ user.name }}</td>
+              <td>{{ user.number }}</td>
+              <td>
+                <button class="btn btn-primary" (click)="unlockAccount(user.number)">Unlock</button>
+              </td>
+            </tr>
           </tbody>
         </table>
       </div>
     </div>
   </div>
-
-
-  <button (click)="unlockAccount(14)">Unlock Account</button>
-
 </div>

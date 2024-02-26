@@ -12,6 +12,10 @@ export const adminGuard: CanActivateFn = (route, state) => {
   {
     return true;
   }
+  else if (storedRole === 'MEMBER')
+  {
+    return true;
+  }
   else
   {
     router.navigate(['/login']);
