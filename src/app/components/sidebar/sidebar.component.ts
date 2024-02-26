@@ -33,4 +33,9 @@ export class SidebarComponent implements OnInit{
       }
     }
   }
+
+  logout(): void {
+    window.sessionStorage.clear();
+    window.location.reload();
+  }
 }

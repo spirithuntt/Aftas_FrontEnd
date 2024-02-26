@@ -15,9 +15,11 @@ import { RoleResolver } from './resolver/role/role.resolver';
 import { adminGuard } from './guard/admin/admin.guard';
 import { BoardMemberComponent } from './components/board-member/board-member.component';
 import { BoardManagerComponent } from './components/board-manager/board-manager.component';
+import { memberGuard } from './guard/member/member.guard';
+import { managerGuard } from './guard/manager/manager.guard';
 
 export const routes: Routes = [
-    { path: '', component: CompetitionComponent },
+    { path: '', component: CompetitionComponent , canActivate: [authGuard, adminGuard] },
     { path: 'add-component', component: CreateCompetitionComponent },
     { path: 'register-member/:competitionCode', component: RegisterMemberComponent },
     { path: 'participants/:competitionCode', component: ParticipantComponent },
@@ -27,9 +29,9 @@ export const routes: Routes = [
     { path: 'login', component: LoginComponent },
     { path: 'register', component: RegisterComponent },
     { path: 'profile', component: ProfileComponent, canActivate: [authGuard] },
-    { path: 'roles', component: RoleComponent, resolve: { roles: RoleResolver }, canActivate: [authGuard , adminGuard], },
-    { path: 'board-member', component: BoardMemberComponent, canActivate: [authGuard, adminGuard] },
-    { path: 'board-manager', component: BoardManagerComponent, canActivate: [authGuard, adminGuard] },
+    { path: 'roles', component: RoleComponent, resolve: { roles: RoleResolver }, canActivate: [authGuard , managerGuard] },
+    { path: 'board-member', component: BoardMemberComponent, canActivate: [authGuard, memberGuard] },
+    { path: 'board-manager', component: BoardManagerComponent, canActivate: [authGuard, managerGuard] }
 
 
 
